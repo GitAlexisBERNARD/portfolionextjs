@@ -9,7 +9,7 @@ export default function Posts({ posts }: { posts: Post[] }) {
         <div>
             <h1>Posts Page</h1>
             {posts.map((post: Post) => (
-                <UnPost key={post.id} id={post.id} title={post.title} content={post.content} authName={post.author.name} />
+                <UnPost key={post.id} title={post.title} content={post.content} id={post.id} published={post.published} authorId={post.authorId} />
             ))}
                     <section>
                             <Upload/>
