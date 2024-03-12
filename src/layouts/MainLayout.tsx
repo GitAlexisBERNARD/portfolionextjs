@@ -9,7 +9,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <nav>
           <Link href="/">Accueil</Link>
           <Link href="/about">À Propos</Link>
-          {/* Autres liens */}
+          <Link href="/posts">Posts</Link>
         </nav>
       </header>
       <main>{children}</main>

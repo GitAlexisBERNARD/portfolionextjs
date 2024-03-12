@@ -1,11 +1,11 @@
 import MainLayout from '@/layouts/MainLayout';
 
-const HomePage: React.FC = () => {
+const AboutPage: React.FC = () => {
   return (
     <MainLayout>
-      <h1>Accueil</h1>
+      <h1>Posts Page</h1>
     </MainLayout>
   );
 };
 
-export default HomePage;
+export default AboutPage;
