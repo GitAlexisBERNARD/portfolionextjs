@@ -48,8 +48,8 @@ export default function App() {
         <NavbarBrand>
           <Logo />
         </NavbarBrand>
-        {menuItems.slice(0, 4).map((item) => (
-          <NavbarItem>
+        {menuItems.slice(0, 4).map((item, index) => (
+          <NavbarItem key={index}> {/* Ajout de la prop `key` ici */}
             <Link className="text-black" href={item.href}>
               {item.name}
             </Link>

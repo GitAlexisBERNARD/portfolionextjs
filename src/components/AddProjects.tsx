@@ -42,7 +42,7 @@ function UserForm() {
       }
   
       const data = await response.json();
-      console.log('Post créé avec succès:', data);
+      console.log("Post créé avec succès:", data);
       // Réinitialiser le formulaire ou afficher un message de succès...
     } catch (error) {
       console.error("Erreur lors de l'envoi du formulaire:", error);
@@ -52,6 +52,7 @@ function UserForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      {/* ... Autres champs du formulaire ... */}
       <div>
         <label>Nom du projet:</label>
         <input
@@ -94,7 +95,7 @@ function UserForm() {
       </div>
       <div>
         <ImageUpload onUpload={handleImageUpload} />
-        {imageURL && <p>URL de l'image: {imageURL}</p>}
+        {imageURL && <p>URL de l&apos;image: {imageURL}</p>} {/* Remplacez ' par &apos; */}
       </div>
       <button type="submit">Soumettre</button>
     </form>
