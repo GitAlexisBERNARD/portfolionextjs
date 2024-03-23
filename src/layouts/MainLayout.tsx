@@ -1,23 +1,16 @@
 import React from 'react';
-import Link from 'next/link';
-
+import Header from '@/components/PageHaeder';
+import { NextUIProvider } from '@nextui-org/react';
+import '@/app/globals.css';
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div>
-      <header>
-        Page du Header
-        <nav>
-          <Link href="/">Accueil</Link>
-          <Link href="/about">À Propos</Link>
-          <Link href="/posts">Posts</Link>
-          <Link href="/ajoutprojet">Add Project</Link>
-        </nav>
-      </header>
+    <NextUIProvider>
+      <Header />
       <main>{children}</main>
       <footer>
         Page du footer
       </footer>
-    </div>
+    </NextUIProvider>
   );
 };
 

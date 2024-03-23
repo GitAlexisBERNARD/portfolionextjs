@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import ImageUpload from '@/components/UploadImage'; // Assurez-vous que le chemin vers ImageUpload est correct
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
 
 function UserForm() {
   // États pour chaque champ du formulaire
@@ -12,11 +10,11 @@ function UserForm() {
   const [client, setClient] = useState('');
   const [imageURL, setImageURL] = useState(''); // URL de l'image téléversée
 
-  const handleImageUpload = (url) => {
+  const handleImageUpload = (url: string) => {
     setImageURL(url);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
     const postData = {
@@ -40,14 +38,14 @@ function UserForm() {
       });
   
       if (!response.ok) {
-        throw new Error('Erreur lors de la soumission du formulaire');
+        throw new Error("Erreur lors de la soumission du formulaire");
       }
   
       const data = await response.json();
       console.log('Post créé avec succès:', data);
       // Réinitialiser le formulaire ou afficher un message de succès...
     } catch (error) {
-      console.error('Erreur lors de l\'envoi du formulaire:', error);
+      console.error("Erreur lors de l'envoi du formulaire:", error);
       // Gérer les erreurs ici...
     }
   };

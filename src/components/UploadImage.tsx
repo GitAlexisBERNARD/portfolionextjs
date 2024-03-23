@@ -1,4 +1,5 @@
 import { ChangeEvent, useState } from "react";
+import Image from 'next/image'; 
 
 enum UploadState {
   IDLE = "IDLE",
@@ -6,19 +7,17 @@ enum UploadState {
   UPLOADED = "UPLOADED",
 }
 
-// Ajoutez un type pour les props si vous avez besoin de passer d'autres propriétés
 interface ImageUploadProps {
-  onUpload: (url: string) => void; // Fonction de rappel pour transmettre l'URL de l'image téléversée
+  onUpload: (url: string) => void;
 }
 
-// Utilisez les props dans votre composant
 const ImageUpload: React.FC<ImageUploadProps> = ({ onUpload }) => {
   const [uploadState, setUploadState] = useState<UploadState>(UploadState.IDLE);
   const [imgUrl, setImgUrl] = useState<string>("");
 
   async function handleFormData(e: ChangeEvent<HTMLInputElement>) {
     if (!e.target.files || e.target.files.length === 0) {
-      return; // Early return si aucun fichier n'est sélectionné
+      return; 
     }
     setUploadState(UploadState.UPLOADING);
     const file = e.target.files[0];
@@ -38,10 +37,10 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onUpload }) => {
       const data: { secure_url: string } = await res.json();
       setImgUrl(data.secure_url);
       setUploadState(UploadState.UPLOADED);
-      onUpload(data.secure_url); // Appel de la fonction de rappel avec l'URL sécurisée
+      onUpload(data.secure_url); 
     } catch (error) {
       console.error(error);
-      setUploadState(UploadState.IDLE); // Réinitialiser l'état en cas d'erreur
+      setUploadState(UploadState.IDLE);
     }
   }
 
@@ -66,7 +65,12 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onUpload }) => {
       ) : (
         <div>
           <p className="text-green-500">Image Uploaded Successfully!</p>
-          <img src={imgUrl} alt="Uploaded" style={{ width: "100%", marginTop: "10px" }} />
+            <div style={{ width: "100%", position: 'relative', height: 'auto' }}>
+              <img
+                src={imgUrl}
+                alt="Uploaded"
+              />
+            </div>
         </div>
       )}
     </div>
