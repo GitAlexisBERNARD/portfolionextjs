@@ -1,91 +1,106 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
-interface ProjectState {
-  name: string;
-  subtitle: string;
-  technologies: string;
-  link: string;
-  images: string;
-}
+import React, { useState } from 'react';
+import ImageUpload from '@/components/UploadImage'; // Assurez-vous que le chemin vers ImageUpload est correct
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
 
-export default function ProjectForm() {
-  const [project, setProject] = useState<ProjectState>({
-    name: '',
-    subtitle: '',
-    technologies: '',
-    link: '',
-    images: '',
-  });
+function UserForm() {
+  // États pour chaque champ du formulaire
+  const [nomPost, setNomPost] = useState('');
+  const [introPost, setIntroPost] = useState('');
+  const [technoPost, setTechnoPost] = useState('');
+  const [date, setDate] = useState('');
+  const [client, setClient] = useState('');
+  const [imageURL, setImageURL] = useState(''); // URL de l'image téléversée
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setProject({
-      ...project,
-      [name]: value,
-    });
+  const handleImageUpload = (url) => {
+    setImageURL(url);
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    // Convertir les technologies et images en tableau
-    const dataToSend = {
-      ...project,
-      technologies: project.technologies.split(',').map(tech => tech.trim()),
-      images: project.images.split(',').map(img => img.trim()),
-    };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     
+    const postData = {
+      nomPost,
+      content: JSON.stringify({
+        introPost,
+        technoPost,
+        date,
+        client,
+        imageURL,
+      }),
+    };
+  
     try {
-      console
-      
+      const response = await fetch('/api/createPost', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData),
       });
-      if (response.ok) {
-        console.log('Projet soumis avec succès');
-        // Réinitialiser le formulaire ou gérer la soumission réussie
-      } else {
-        console.error('Erreur lors de la soumission du projet');
+  
+      if (!response.ok) {
+        throw new Error('Erreur lors de la soumission du formulaire');
       }
+  
+      const data = await response.json();
+      console.log('Post créé avec succès:', data);
+      // Réinitialiser le formulaire ou afficher un message de succès...
     } catch (error) {
-      console.error('Erreur lors de la soumission:', error);
+      console.error('Erreur lors de l\'envoi du formulaire:', error);
+      // Gérer les erreurs ici...
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        placeholder="Nom du projet"
-        value={project.name}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="subtitle"
-        placeholder="Sous-titre"
-        value={project.subtitle}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="technologies"
-        placeholder="Technologies (séparées par une virgule)"
-        value={project.technologies}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="link"
-        placeholder="Lien du projet"
-        value={project.link}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="images"
-        placeholder="URLs des images (séparées par une virgule)"
-        value={project.images}
-        onChange={handleChange}
-      />
-      <button type="submit">Soumettre le projet</button>
+      <div>
+        <label>Nom du projet:</label>
+        <input
+          type="text"
+          value={nomPost}
+          onChange={(e) => setNomPost(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Introduction du post:</label>
+        <input
+          type="text"
+          value={introPost}
+          onChange={(e) => setIntroPost(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Technologie du post:</label>
+        <input
+          type="text"
+          value={technoPost}
+          onChange={(e) => setTechnoPost(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Date:</label>
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Client:</label>
+        <input
+          type="text"
+          value={client}
+          onChange={(e) => setClient(e.target.value)}
+        />
+      </div>
+      <div>
+        <ImageUpload onUpload={handleImageUpload} />
+        {imageURL && <p>URL de l'image: {imageURL}</p>}
+      </div>
+      <button type="submit">Soumettre</button>
     </form>
   );
 }
+
+export default UserForm;
