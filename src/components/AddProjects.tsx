@@ -29,7 +29,7 @@ function UserForm() {
     };
   
     try {
-      const response = await fetch('/api/createPost', {
+      const response = await fetch('api/createPost', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
