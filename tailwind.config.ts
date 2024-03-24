@@ -12,6 +12,10 @@ const config: Config = {
     extend: {
       fontFamily: {
         ClashGroteskBold: "ClashGrotesk-Bold",
+        ClashGroteskMedium: "ClashGrotesk-Medium",
+        ClashGroteskRegular: "ClashGrotesk-Regular",
+        ClashGroteskLight: "ClashGrotesk-Light",
+        ClashGroteskSemiBold: "ClashGrotesk-SemiBold",
         OpenSans: "Open Sans",
       },
       backgroundImage: {

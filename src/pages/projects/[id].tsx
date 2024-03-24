@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import prisma from '@/lib/prisma';
 import Image from 'next/image';
 import type { Post } from '@prisma/client';
+import MainLayout from '@/layouts/MainLayout';
 
 type Props = {
   post: Post;
@@ -12,8 +13,19 @@ const UnPostid: React.FC<Props> = ({ post }) => {
   const contentObject = typeof post.content === 'string' ? JSON.parse(post.content) : post.content;
 
   return (
-    <div>
-      <h2>{post.title}</h2>
+    <MainLayout>
+    <h2 className='font-ClashGroteskSemiBold text-5xl'>{post.title}</h2>
+    <div className='flex'>
+      <div>
+        <Image
+        src={contentObject.imageURL}
+        alt={post.title}
+        width={500}
+        height={300}
+        layout="responsive"
+      />
+    </div>  
+      
         <p>{contentObject.introPost}</p>
         <p>{contentObject.technoPost}</p>
         <p>{contentObject.date}</p>
@@ -26,6 +38,7 @@ const UnPostid: React.FC<Props> = ({ post }) => {
         layout="responsive"
       />
     </div>
+    </MainLayout>
   );
 };
 

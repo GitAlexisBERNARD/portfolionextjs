@@ -29,7 +29,7 @@ function UserForm() {
     };
   
     try {
-      const response = await fetch('api/createPost', {
+      const response = await fetch('/api/createPost', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,16 +43,14 @@ function UserForm() {
   
       const data = await response.json();
       console.log("Post créé avec succès:", data);
-      // Réinitialiser le formulaire ou afficher un message de succès...
     } catch (error) {
       console.error("Erreur lors de l'envoi du formulaire:", error);
-      // Gérer les erreurs ici...
+
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* ... Autres champs du formulaire ... */}
       <div>
         <label>Nom du projet:</label>
         <input
@@ -95,7 +93,7 @@ function UserForm() {
       </div>
       <div>
         <ImageUpload onUpload={handleImageUpload} />
-        {imageURL && <p>URL de l&apos;image: {imageURL}</p>} {/* Remplacez ' par &apos; */}
+        {imageURL && <p>URL de l&apos;image: {imageURL}</p>}
       </div>
       <button type="submit">Soumettre</button>
     </form>
