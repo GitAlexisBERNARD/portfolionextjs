@@ -49,8 +49,8 @@ export default function App() {
           <Logo />
         </NavbarBrand>
         {menuItems.slice(0, 4).map((item, index) => (
-          <NavbarItem key={index}> {/* Ajout de la prop `key` ici */}
-            <Link className="text-black" href={item.href}>
+          <NavbarItem key={index}> 
+            <Link className="text-black font-OpenSans text-xl" href={item.href}>
               {item.name}
             </Link>
           </NavbarItem>
