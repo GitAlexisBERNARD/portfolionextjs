@@ -50,7 +50,7 @@ export default function App() {
         </NavbarBrand>
         {menuItems.slice(0, 4).map((item, index) => (
           <NavbarItem key={index}> 
-            <Link className="text-black font-OpenSans text-xl" href={item.href}>
+            <Link className="text-black font-OpenSans text-2xl" href={item.href}>
               {item.name}
             </Link>
           </NavbarItem>

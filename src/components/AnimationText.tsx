@@ -16,9 +16,9 @@ const AnimationText = () => {
   }, []);
 
   return (
-    <div className='flex flex-col'>
-      <h3 ref={h3Ref} className='font-ClashGroteskBold text-[50px]'>Hi I’m Alexis Bernard</h3>
-      <h1 ref={h1Ref} className='font-ClashGroteskBold uppercase'>Future full-stack developer</h1>
+    <div className='flex flex-col justify-center ml-[15vw]'>
+      <h3 ref={h3Ref} className='font-ClashGroteskBold text-[60px]'>Hi I’m Alexis Bernard</h3>
+      <h1 ref={h1Ref} className='font-ClashGroteskBold uppercase  text-[25px]'>Future Backend developer</h1>
     </div>
   );
 };
