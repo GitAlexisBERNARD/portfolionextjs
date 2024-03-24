@@ -32,7 +32,7 @@ export default function App() {
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-white"
+      className="bg-white border-none"
     >
       <NavbarContent className="sm:hidden pr-3" justify="start">
         <NavbarBrand>
@@ -44,8 +44,8 @@ export default function App() {
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"}/>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="start">
+        <NavbarBrand >
           <Logo />
         </NavbarBrand>
         {menuItems.slice(0, 4).map((item, index) => (

@@ -10,7 +10,9 @@ export default function Posts({ posts }: { posts: Post[] }) {
       <MainLayout>
         <h1>Posts Page</h1>
         {posts.map((post: Post) => (
+          <div key={post.id} className='flex'>
           <UnPost key={post.id} title={post.title} content={post.content} id={post.id} published={post.published} authorId={post.authorId} />
+          </div>
         ))}
       </MainLayout>
     </div>
