@@ -45,12 +45,11 @@ const AnimationImage = () => {
       <div 
         ref={containerRef} 
         className='relative w-1/2 h-[100vh] overflow-hidden'
-       
       >
         <img
      src="/images/alexis.jpg" 
      alt="Description"
-     className='right-[12rem] bottom-[12rem] absolute z-10 w-[45vh] h-auto'
+     className='right-[12rem] bottom-[12rem] absolute z-10 w-[45vh] h-auto linkhover'
         />
       </div>
   );

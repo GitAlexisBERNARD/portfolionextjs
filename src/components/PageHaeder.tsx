@@ -36,7 +36,9 @@ export default function App() {
     >
       <NavbarContent className="sm:hidden pr-3" justify="start">
         <NavbarBrand>
+          <Link href="/" >
           <Logo />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -46,7 +48,9 @@ export default function App() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarBrand >
-          <Logo />
+          <Link href="/">
+            <Logo />
+          </Link>
         </NavbarBrand>
         {menuItems.slice(0, 4).map((item, index) => (
           <NavbarItem key={index}> 
@@ -61,5 +65,6 @@ export default function App() {
         {menuItems.map(generateMenuItem)}
       </NavbarMenu>
     </Navbar>
+    
   );
 }

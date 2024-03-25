@@ -39,7 +39,7 @@ export default function Contact() {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="my-10 lg:px-[50vh] px-16">
+      <form onSubmit={handleSubmit(onSubmit)} className="my-10 lg:px-[79vh] px-16">
         <input
           type="checkbox"
           id=""

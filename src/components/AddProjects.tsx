@@ -12,9 +12,13 @@ function UserForm() {
   const [imageURL, setImageURL] = useState(''); 
   const [skills, setskills] = useState(''); 
   const [lienprojet, setLienprojet] = useState('');
+  const [imagepost, setimagepost] = useState('');
 
   const handleImageUpload = (url: string) => {
     setImageURL(url);
+  };
+  const handlesetimagepost = (url: string) => {
+    setimagepost(url);
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -31,6 +35,7 @@ function UserForm() {
         client,
         imageURL,
         lienprojet,
+        imagepost,
       }),
     };
   
@@ -138,11 +143,18 @@ function UserForm() {
         />
       </div>
       <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">Image:</label>
         <ImageUpload onUpload={handleImageUpload} />
         {imageURL && <p>URL de l&apos;image: {imageURL}</p>}
       </div>
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="imagepost">Image pour le post:</label>
+        <ImageUpload onUpload={handlesetimagepost} />
+        {imagepost && <p>URL de l&apos;image pour le post: {imagepost}</p>}
+      </div>
       <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Soumettre</button>
     </form>
+    
   );
 }
 

@@ -15,7 +15,7 @@ export default function UnPost({ title, content, id }: Post) {
             <div className="absolute w-full card-dashed"></div>
             <section className="flex w-full lg:aspect-square max-[400px]:h-[700px] min-[1480px]:h-auto lg:h-[600px] card-main">
               <div className="justify-end p-10 items-start w-full h-full flex flex-col gap-5 content-a">
-                <img src="/vercel.svg" className="w-20" />
+                <img src={contentObject.imagepost} className="w-20" />
                 <h3 className="font-bold text-3xl font-Syne">
                   {title}
                 </h3>

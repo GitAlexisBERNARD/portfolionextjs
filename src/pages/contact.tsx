@@ -4,7 +4,10 @@ import ContactForm from '@/components/ContactForm';
 const contact: React.FC = () => {
   return (
     <MainLayout>
-        <ContactForm />
+      <div className='h-[70vh] flex flex-col justify-center'>
+      <h1 className='font-ClashGroteskSemiBold text-center text-2xl'>Contact Me</h1>
+        <ContactForm/>
+      </div>
     </MainLayout>
   );
 };
