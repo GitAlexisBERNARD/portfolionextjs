@@ -17,7 +17,6 @@ const AnimationImage = () => {
     }
   }, []);
 
-  // Suivi du curseur
   useEffect(() => {
     const moveImage = (e: MouseEvent) => { 
         const { offsetX, offsetY } = e;
@@ -44,13 +43,14 @@ const AnimationImage = () => {
   return (
       <div 
         ref={containerRef} 
-        className='relative w-1/2 h-[100vh] overflow-hidden'
-      >
-        <img
-     src="/images/alexis.jpg" 
-     alt="Description"
-     className='right-[12rem] bottom-[12rem] absolute z-10 w-[45vh] h-auto linkhover'
-        />
+        className="lg:flex justify-end lg:col-start-6 lg:col-span-5">
+            <Image
+              src="/images/alexis.jpg"
+              alt="Alexis Bernard"
+              width={500}
+              height={300}
+              className="rounded-lg lg:col-start-6 lg:col-span-5 lg:w-4/5"
+            />
       </div>
   );
 };

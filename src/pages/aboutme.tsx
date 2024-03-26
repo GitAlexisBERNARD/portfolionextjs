@@ -56,7 +56,7 @@ export default function About() {
 
   return (
     <MainLayout>
-      <div className="flex flex-col m-6 gap-32 mt-20 lg:grid grid-cols-12 lg:gap-4 lg:m-auto lg:gap-y-36">
+      <div className="flex flex-col m-6 gap-32 mt-20 lg:grid grid-cols-12 lg:gap-4 lg:m-auto lg:gap-y-36 !mb-8">
         <div className="col-start-2 col-span-10 flex flex-col lg:grid grid-cols-10 gap-4 lg:p-20">
           <h1 className="capitalize font-ClashGroteskExtraLight text-5xl lg:text-9xl lg:col-span-5 lg:flex items-center">
             Alexis Bernard

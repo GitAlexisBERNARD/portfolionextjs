@@ -19,7 +19,7 @@ const UnPostid: React.FC<Props> = ({ post }) => {
     typeof post.content === "string" ? JSON.parse(post.content) : post.content;
   return (
     <MainLayout>
-      <div className="flex flex-col m-6 gap-16 mt-20 lg:grid grid-cols-12 lg:gap-4 lg:m-auto lg:gap-y-20">
+      <div className="flex flex-col m-6 gap-16 mt-20 lg:grid grid-cols-12 lg:gap-4 lg:m-auto lg:gap-y-20 !mb-8">
         <div className="flex flex-col gap-4 col-start-2 col-span-10 lg:pt-28">
           <div className="flex justify-between items-center">
             <h1 className="font-ClashGroteskExtraLight text-3xl lg:text-6xl">{post.title}</h1>
@@ -40,7 +40,7 @@ const UnPostid: React.FC<Props> = ({ post }) => {
         </div>
         <p className="font-IntelOneLight lg:col-start-2 col-span-10 lg:text-3xl">{contentObject.introPost}</p>
         <div className="border-t border-white pt-6 lg:col-start-2 col-span-10">
-          <h2 className="font-ClashGroteskRegular text-4xl lg:text-6xl">MMI MontbÃ©liard</h2>
+          <h2 className="font-ClashGroteskRegular text-4xl lg:text-6xl">{contentObject.client}</h2>
           <p className="font-IntelOneLight text-xl lg:text-2xl">{contentObject.date}</p>
         </div>
       </div>

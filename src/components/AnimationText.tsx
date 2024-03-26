@@ -17,14 +17,11 @@ const AnimationText = () => {
   }, []);
 
   return (
-    <div className='flex flex-col justify-center ml-[15vw]'>
-      <h3 ref={h3Ref} className='font-ClashGroteskBold text-[60px]'>Hi I’m Alexis BERNARD</h3>
-      <h1 ref={h1Ref} className='font-ClashGroteskBold uppercase  text-[25px]'>Future Backend developer</h1>
-      <Link href="/projects" ref={BtnRef} className="relative inline-block px-4 py-2 font-medium group mt-12 w-1/4 linkhover">
-          <span className="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 rounded-xl bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-          <span className="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black rounded-xl"></span>
-          <span className="relative text-black group-hover:text-white">See my work</span>
-      </Link>
+      <div className="flex flex-col lg:col-span-5 lg:flex justify-center">
+        <h1 ref={h1Ref} className="capitalize font-ClashGroteskExtraLight text-5xl lg:text-9xl">
+        Alexis Bernard
+        </h1>
+      <h2 ref={h3Ref} className="uppercase text-m lg:text-xl font-IntelOneLight">FUTURE BACKEND DEVELOPER</h2>
     </div>
   );
 };

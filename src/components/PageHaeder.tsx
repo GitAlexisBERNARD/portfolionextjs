@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <header className="bg-[#0F0F0F] py-8 lg:px-[100px] px-[50px]">
-      <div className="flex items-center justify-between p-5 bg-white rounded-lg bg-opacity-[0.01]">
+      <div className="flex items-center justify-between p-5 bg-white rounded-lg bg-opacity-[0.01] px-4">
         <Link href="/">
         <div><svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 305.1 186.74" className="w-16 h-16">
     <defs></defs>
