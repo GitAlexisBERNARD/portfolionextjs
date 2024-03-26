@@ -50,7 +50,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onUpload }) => {
         <div>
           <label
             htmlFor="image"
-            className="cursor-pointer bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-400"
+            className="cursor-pointer font-ClashGroteskLight py-2 px-4 rounded bg-white hover:bg-gray-300 text-black "
           >
             {uploadState === UploadState.UPLOADING ? "Uploading..." : "Upload Image"}
             <input

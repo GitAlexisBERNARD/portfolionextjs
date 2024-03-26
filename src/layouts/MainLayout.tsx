@@ -17,7 +17,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </Head>
           <FlareCursor />
         <Header />
-        <main className='overflow-hidden'>{children}</main>
+        <main className='overflow-hidden bg-[#0F0F0F] text-white'>{children}</main>
         <Footer />
       </NextUIProvider>
     );

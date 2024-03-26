@@ -4,74 +4,94 @@ import MainLayout from "@/layouts/MainLayout";
 import Image from "next/image";
 
 export default function About() {
-    const titleRef = useRef(null);
-    const contentRef = useRef(null);
-    const skillsRef = useRef(null); 
-    const imageRef = useRef(null); 
+  const titleRef = useRef(null);
+  const contentRef = useRef(null);
+  const skillsRef = useRef(null);
+  const imageRef = useRef(null);
 
-    useEffect(() => {
-      gsap.from(titleRef.current, { duration: 1, x: -50, opacity: 0 });
-      gsap.from(contentRef.current, { duration: 1, delay: 0.5, x: -100, opacity: 0 });
-      
+  useEffect(() => {
+    gsap.from(titleRef.current, { duration: 1, x: -50, opacity: 0 });
+    gsap.from(contentRef.current, {
+      duration: 1,
+      delay: 0.5,
+      x: -100,
+      opacity: 0,
+    });
 
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             gsap.to(skillsRef.current, { opacity: 1, y: 50, duration: 1 });
             gsap.to(imageRef.current, { opacity: 1, x: 0, duration: 1 });
           }
         });
-      }, { threshold: 0.5 });
-      if (skillsRef.current) {
-        observer.observe(skillsRef.current);
-      }
-      if (imageRef.current) {
-        observer.observe(imageRef.current);
-      }
-      
-      return () => { 
-        observer.disconnect();
-      };
-    }, []);
-
-    const skills = [
-        { name: "React", logo: "/logos/react.png" },
-        { name: "VueJs", logo: "/logos/Vue.png" },
-        { name: "NextJs", logo: "/logos/next-js.svg" },
-        { name: "Supabase", logo: "/logos/supabase.webp " },
-        { name: "Pocketbase", logo: "/logos/pockerbase.png" },
-        { name: "Python", logo: "/logos/Python.png" },
-        { name: "TailwindCSS", logo: "/logos/tailwindcss.webp" },
-        { name: "Typescript", logo: "/logos/typescript.webp" },
-        { name: "Wordpress", logo: "/logos/wordpress.webp" },
-        { name: "Adobe Creative Cloud", logo: "/logos/Adobe.png" },
-    ];
-
-    return (
-        <MainLayout>
-            <div className="container mx-auto px-4 py-8">
-                <h1 ref={titleRef} className="text-4xl font-bold text-center mb-4">À propos de moi</h1>
-                <div className="flex">
-                    <div ref={contentRef} className="text-lg text-gray-700">
-                    <p>Je suis un développeur web passionné par la création d&apos;expériences utilisateur captivantes et performantes. Avec une forte expertise en JavaScript, React, et maintenant Next.js, je m&apos;efforce de construire des applications web modernes et réactives.</p>
-                    </div>
-                    <div ref={imageRef} className="opacity-0 transform translate-x-20">
-                        <Image src="/images/alexis.jpg" alt="Alexis" width={500} height={300} />
-                    </div>
-                    </div>
-                    <h2 className="text-2xl font-bold">My Skills</h2>
-                <div className="flex items-center mt-8 ml-32 mb-3">
-                    <div ref={skillsRef} className="opacity-0 transform -translate-x-20 flex flex-wrap gap-6">
-                        {skills.map((skill, index) => (
-                            <div key={index} className="flex items-center mb-4 flex-col">
-                                <Image src={skill.logo} alt={skill.name} width={100} height={100} />
-                                <span className="ml-2">{skill.name}</span>
-                            </div>
-                        ))}
-                    </div>
- 
-                </div>
-            </div>
-        </MainLayout>
+      },
+      { threshold: 0.5 }
     );
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const skills = [
+    { name: "React", logo: "/logos/react.png" },
+    { name: "VueJs", logo: "/logos/Vue.png" },
+    { name: "NextJs", logo: "/logos/next-js.svg" },
+    { name: "Supabase", logo: "/logos/supabase.webp " },
+    { name: "Pocketbase", logo: "/logos/pockerbase.png" },
+    { name: "Python", logo: "/logos/Python.png" },
+    { name: "TailwindCSS", logo: "/logos/tailwindcss.webp" },
+    { name: "Typescript", logo: "/logos/typescript.webp" },
+    { name: "Wordpress", logo: "/logos/wordpress.webp" },
+    { name: "Adobe Creative Cloud", logo: "/logos/Adobe.png" },
+  ];
+
+  return (
+    <MainLayout>
+      <div className="flex flex-col m-6 gap-32 mt-20 lg:grid grid-cols-12 lg:gap-4 lg:m-auto lg:gap-y-36">
+        <div className="col-start-2 col-span-10 flex flex-col lg:grid grid-cols-10 gap-4 lg:p-20">
+          <h1 className="capitalize font-ClashGroteskExtraLight text-5xl lg:text-9xl lg:col-span-5 lg:flex items-center">
+            Alexis Bernard
+          </h1>
+          <div className="lg:flex justify-end lg:col-start-6 lg:col-span-5">
+            <Image
+              src="/images/alexis2.jpg"
+              alt="Alexis Bernard"
+              width={500}
+              height={300}
+              className="rounded-lg lg:col-start-6 lg:col-span-5 lg:w-4/5"
+            />
+          </div>
+        </div>
+        <p className="font-IntelOneLight lg:col-start-2 col-span-10 lg:text-3xl">
+  Je suis un <span className="font-IntelOneBold">développeur web</span> passionné par la
+  création d&apos;expériences utilisateur captivantes et performantes. Avec
+  une forte expertise en <span className="font-IntelOneBold">JavaScript</span>,{" "}
+  <span className="font-IntelOneBold">React</span>, et maintenant <span className="font-IntelOneBold">Next.js</span>, je
+  m&apos;efforce de construire des applications web modernes et réactives.
+</p>
+        <div className="border-t border-white pt-6 lg:col-start-2 col-span-10">
+          <h2 className="font-ClashGroteskRegular text-4xl lg:text-6xl">MMI Montbéliard</h2>
+          <p className="font-IntelOneMedium text-xl lg:text-2xl">2022 - 2025</p>
+        </div>
+        <div className="border-t border-white pt-6 lg:col-start-2 col-span-10">
+          <div className="flex flex-wrap gap-4">
+            {skills.map((skill, index) => (
+              <div key={index}>
+                <p className="border-white border py-3 px-6 rounded-xl uppercase font-ClashGroteskMedium">{skill.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </MainLayout>
+  );
 }

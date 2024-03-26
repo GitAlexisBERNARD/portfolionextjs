@@ -61,98 +61,98 @@ function UserForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 p-4 bg-white shadow-md rounded-lg">
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 mb-8 p-4 border-1 border-white shadow-md rounded-[12.58px]">
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nomPost">Nom du projet:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="nomPost">Nom du projet:</label>
         <input
           id="nomPost"
           type="text"
           value={nomPost}
           onChange={(e) => setNomPost(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-transparent rounded-[12.58px] leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="introPost">Introduction du post:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="introPost">Introduction du post:</label>
         <input
           id="introPost"
           type="text"
           value={introPost}
           onChange={(e) => setIntroPost(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent rounded-[12.58px]"
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="introPost">Les attentes du projets:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="introPost">Les attentes du projets:</label>
         <input
           id="introPost"
           type="text"
           value={needs}
           onChange={(e) => setneeds(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="font-ClashGroteskLight shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent rounded-[12.58px]"
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="introPost">Les competences utilises:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="introPost">Les competences utilises:</label>
         <input
           id="introPost"
           type="text"
           value={skills}
           onChange={(e) => setskills(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="font-ClashGroteskLight shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent rounded-[12.58px]"
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="technoPost">Technologie du post:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="technoPost">Technologie du post:</label>
         <input
           id="technoPost"
           type="text"
           value={technoPost}
           onChange={(e) => setTechnoPost(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="font-ClashGroteskLight shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent rounded-[12.58px]"
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="date">Date:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="date">Date:</label>
         <input
           id="date"
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="font-ClashGroteskLight shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent rounded-[12.58px]"
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="client">Client:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="client">Client:</label>
         <input
           id="client"
           type="text"
           value={client}
           onChange={(e) => setClient(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="font-ClashGroteskLight shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent rounded-[12.58px]"
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="client">Lien vers le projet:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="client">Lien vers le projet:</label>
         <input
           id="client"
           type="text"
           value={lienprojet}
           onChange={(e) => setLienprojet(e.target.value)}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="font-ClashGroteskLight shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent rounded-[12.58px]" 
         />
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">Image:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="image">Image:</label>
         <ImageUpload onUpload={handleImageUpload} />
         {imageURL && <p>URL de l&apos;image: {imageURL}</p>}
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="imagepost">Image pour le post:</label>
+        <label className="font-ClashGroteskLight block text-white text-sm font-bold mb-2" htmlFor="imagepost">Image pour le post:</label>
         <ImageUpload onUpload={handlesetimagepost} />
         {imagepost && <p>URL de l&apos;image pour le post: {imagepost}</p>}
       </div>
-      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Soumettre</button>
+      <button type="submit" className="font-ClashGroteskLight bg-white hover:bg-gray-300 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Soumettre</button>
     </form>
     
   );

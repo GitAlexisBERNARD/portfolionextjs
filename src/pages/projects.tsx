@@ -8,7 +8,7 @@ export default function Posts({ posts }: { posts: Post[] }) {
   return (
     
     <MainLayout>
-      <h1 className="text-2xl font-bold text-center my-8 linkhover">Projects</h1>
+      <h1 className='font-ClashGroteskRegular text-white items-center  text-center text-2xl'>Projects</h1>
       <div className='lg:grid-cols-3 grid-cols-1 md:grid-cols-2 grid p-10'>
         {posts.map((post: Post) => (
           <div key={post.id}>

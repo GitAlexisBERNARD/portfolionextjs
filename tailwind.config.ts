@@ -9,20 +9,29 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    borderRadius: {
+      lg: "1.5rem",
+      xl: "200rem",
+    },
     extend: {
       fontFamily: {
-        ClashGroteskBold: "ClashGrotesk-Bold",
-        ClashGroteskMedium: "ClashGrotesk-Medium",
-        ClashGroteskRegular: "ClashGrotesk-Regular",
+        ClashGroteskExtraLight: "ClashGrotesk-ExtraLight",
         ClashGroteskLight: "ClashGrotesk-Light",
+        ClashGroteskRegular: "ClashGrotesk-Regular",
+        ClashGroteskMedium: "ClashGrotesk-Medium",
         ClashGroteskSemiBold: "ClashGrotesk-SemiBold",
-        OpenSans: "Open Sans",
+        ClashGroteskBold: "ClashGrotesk-Bold",
+        IntelOneLight: "IntelOneMono-Light",
+        IntelOneRegular: "IntelOneMono-Regular",
+        IntelOneMedium: "IntelOneMono-Medium",
+        IntelOneBold: "IntelOneMono-Bold",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
         "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      
     },
   },
   darkMode: "class",
