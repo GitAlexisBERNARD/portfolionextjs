@@ -51,7 +51,7 @@ export default function UnPost({ title, content, id }: Post) {
               <div className="hidden p-10 max-w-[100%] card-hovered-content"> 
                 <h2 className="mb-5 font-bold text-3xl text-white font-IntelOneLight">{title}</h2>
                 <p className="mb-10 text-white font-IntelOneLight text-[14px]">{contentObject.technoPost}</p>
-                <p className="text-white font-IntelOneLight font-bold">{contentObject.introPost}</p>
+                <p className="text-white font-IntelOneLight font-bold overflow-hidden">{contentObject.introPost}</p>
                 <Link href={`/projects/${id}`}>
                 <div className="relative inline-flex items-center justify-start px-5 py-3 overflow-hidden font-bold rounded-full group w-[150px]">
                   <span className="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
