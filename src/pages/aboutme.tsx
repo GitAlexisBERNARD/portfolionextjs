@@ -72,12 +72,12 @@ export default function About() {
           </div>
         </div>
         <p className="font-IntelOneLight lg:col-start-2 col-span-10 lg:text-3xl">
-  Je suis un <span className="font-IntelOneBold">développeur web</span> passionné par la
-  création d&apos;expériences utilisateur captivantes et performantes. Avec
-  une forte expertise en <span className="font-IntelOneBold">JavaScript</span>,{" "}
-  <span className="font-IntelOneBold">React</span>, et maintenant <span className="font-IntelOneBold">Next.js</span>, je
-  m&apos;efforce de construire des applications web modernes et réactives.
+  I am a <span className="font-IntelOneBold">web developer</span> passionate about
+  creating captivating and high-performance user experiences. With
+  strong expertise in <span className="font-IntelOneBold">JavaScript</span>, <span className="font-IntelOneBold">React</span>, and now <span className="font-IntelOneBold">Next.js</span>, I
+  strive to build modern and responsive web applications.
 </p>
+
         <div className="border-t border-white pt-6 lg:col-start-2 col-span-10">
           <h2 className="font-ClashGroteskRegular text-4xl lg:text-6xl">MMI Montbéliard</h2>
           <p className="font-IntelOneMedium text-xl lg:text-2xl">2022 - 2025</p>
